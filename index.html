@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Labo-lecture - rappel et maîtrise de la boucle while</title>
+  <link href="style.css" rel="stylesheet"/>
+  <link href="style_print.css" media="print" rel="stylesheet"/>
+  <link href="unified_style.css" rel="stylesheet"/>
+  <script defer src="script.js"></script>
+  <script defer src="unified_script.js"></script>
+</head>
+<body id="top">
+  <a aria-label="Retour en haut" class="back-to-top" href="#top">↑</a>
+  <main class="document">
+    <header class="document-header">
+      <section aria-label="En-tête du cours" class="course-banner">
+        <div class="banner-left">
+          <div class="banner-photo-wrap">
+            <img alt="Anis Ghaieb" class="banner-photo" src="img/anis.png"/>
+          </div>
+          <div class="banner-left-info">
+            <p class="banner-name">Anis Ghaieb</p>
+            <p class="banner-email">baniss2002@gmail.com</p>
+          </div>
+        </div>
+        <div class="banner-center">
+          <p class="banner-course">
+            <span class="banner-course-line">PROGRAMMATION I</span>
+            <span class="banner-course-line">INTRODUCTION AUX ALGORITHMES</span>
+          </p>
+        </div>
+        <div class="banner-right">
+          <img alt="Collège Universel" class="banner-logo" src="img/college.png"/>
+          <p class="banner-college">
+            <span class="banner-college-main">Collège Universel</span>
+            <span class="banner-college-sub">Campus Montréal</span>
+          </p>
+        </div>
+      </section>
+      <section aria-label="Équipe" class="team-panel">
+        <div class="team-panel-head"><h2 class="team-panel-title">Equipe</h2></div>
+        <div class="team-grid">
+          <label class="team-field" for="teamMember1"><span class="team-label">Nom1 :</span><input autocomplete="off" class="team-member-input" id="teamMember1" placeholder="Nom de l’étudiant 1" type="text"/></label>
+          <label class="team-field" for="teamMember2"><span class="team-label">Nom2 :</span><input autocomplete="off" class="team-member-input" id="teamMember2" placeholder="Nom de l’étudiant 2" type="text"/></label>
+          <label class="team-field" for="teamMember3"><span class="team-label">Nom3 :</span><input autocomplete="off" class="team-member-input" id="teamMember3" placeholder="Nom de l’étudiant 3" type="text"/></label>
+          <label class="team-field" for="teamMember4"><span class="team-label">Nom4 :</span><input autocomplete="off" class="team-member-input" id="teamMember4" placeholder="Nom de l’étudiant 4" type="text"/></label>
+        </div>
+      </section>
+      <div aria-hidden="true" class="team-print-card" id="teamPrint"></div>
+      <div class="document-hero">
+        <figure class="content-figure hero-figure">
+          <img alt="Illustration du chapitre" class="content-image hero-image" src="img/chap.png"/>
+        </figure>
+        <p class="document-kicker">programmation — boucle while, algorithmique et Python</p>
+        <h1 class="document-title">Labo-lecture : rappel et maîtrise de la boucle while</h1>
+        <p class="document-intro">Dans ce labo-lecture, vous allez revoir la boucle <strong>while</strong> en algorithmique et en Python à travers une progression complète : rappels théoriques, réponses courtes, lecture d’algorithmes, complétion de structures incomplètes, traçage d’exécution, rédaction d’algorithmes, programmation Python, débogage et synthèse finale. L’objectif est de comprendre quand utiliser <strong>while</strong>, comment éviter les erreurs classiques et comment passer d’une idée logique à un programme fiable.</p>
+      </div>
+      <section aria-label="Vue d’ensemble du labo" class="document-overview">
+        <div class="overview-panel">
+          <h2 class="overview-title">table des matières</h2>
+          <nav aria-label="Table des matières du labo" class="toc-nav">
+            <ul class="toc-list">
+              <li class="toc-item toc-level-1"><a class="toc-link" href="#partie-1">Partie 1 — Préparation du dossier de travail</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-2">Partie 2 — Rappel théorique essentiel</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-3">Partie 3 — Vérification des notions de base</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-4">Partie 4 — Lecture et compréhension</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-5">Partie 5 — Compléter une logique existante</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-6">Partie 6 — Tracer l’exécution</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-7">Partie 7 — Passage de l’idée à l’algorithme</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-8">Partie 8 — Passage de l’algorithme au Python</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-9">Partie 9 — Exercices progressifs de programmation</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-10">Partie 10 — Débogage pédagogique</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-11">Partie 11 — Synthèse et bilan final</a></li>
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-qcm">QCM de validation</a></li>
+<li class="toc-item toc-level-1 toc-item-export"><a class="toc-link" href="#export">Exportation en PDF</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="overview-panel">
+          <h2 class="overview-title">objectifs de la leçon</h2>
+          <ul class="goal-list">
+            <li>Reconnaître les situations où une boucle <strong>while</strong> est appropriée.</li>
+<li>Distinguer l’initialisation, la condition d’entrée, le corps de boucle et la mise à jour.</li>
+<li>Éviter les erreurs fréquentes, notamment la boucle infinie.</li>
+<li>Lire, expliquer et compléter un algorithme utilisant <strong>while</strong>.</li>
+<li>Traduire un raisonnement algorithmique en programme Python exécutable.</li>
+          </ul>
+        </div>
+      </section>
+    </header>
+
+    
+<section class="part" id="partie-1">
+  <div class="part-header"><h2 class="part-title">Partie 1 — Préparation du dossier de travail</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p1-s1">Créer un dossier de labo sûr</h3>
+  <div class="section-body">
+    <p>Avant de commencer, préparez un dossier dédié. Vous garderez ainsi tous vos scripts, vos essais et vos captures dans un emplacement simple à retrouver. Cette étape protège aussi vos autres fichiers et vous donne un environnement stable pour travailler dans VS Code.</p>
+    
+<section class="snippet-embed">
+<section class="code-window theme-powershell">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">setup_boucle_while.ps1</div>
+<button class="copy-btn" data-copy-mode="plain" data-copy-target="code-setup-boucle-while-ps1" type="button">Copier</button>
+</div>
+<div class="code-body">
+<div class="terminal-intro">PS C:\Users\Etudiant&gt;</div>
+<div class="code-content" id="code-setup-boucle-while-ps1">
+<div class="line" data-copy="$lab = &quot;$env:USERPROFILE\Documents\Labo_Boucle_While&quot;"><span class="line-no">1</span><span class="line-text"><span&nbsp;class="variable">$lab</span>&nbsp;=&nbsp;<span&nbsp;class="string">&quot;$env:USERPROFILE\Documents\Labo_Boucle_While&quot;</span></span></div><div class="line" data-copy="New-Item -Path $lab -ItemType Directory -Force | Out-Null"><span class="line-no">2</span><span class="line-text">New<span&nbsp;class="param">-Item</span>&nbsp;<span&nbsp;class="param">-Path</span>&nbsp;<span&nbsp;class="variable">$lab</span>&nbsp;<span&nbsp;class="param">-ItemType</span>&nbsp;Directory&nbsp;<span&nbsp;class="param">-Force</span>&nbsp;|&nbsp;Out<span&nbsp;class="param">-Null</span></span></div><div class="line" data-copy="Set-Location -Path $lab"><span class="line-no">3</span><span class="line-text">Set<span&nbsp;class="param">-Location</span>&nbsp;<span&nbsp;class="param">-Path</span>&nbsp;<span&nbsp;class="variable">$lab</span></span></div><div class="line" data-copy="New-Item -Path &quot;.\while_labo.py&quot; -ItemType File -Force | Out-Null"><span class="line-no">4</span><span class="line-text">New<span&nbsp;class="param">-Item</span>&nbsp;<span&nbsp;class="param">-Path</span>&nbsp;<span&nbsp;class="string">&quot;.\while_labo.py&quot;</span>&nbsp;<span&nbsp;class="param">-ItemType</span>&nbsp;File&nbsp;<span&nbsp;class="param">-Force</span>&nbsp;|&nbsp;Out<span&nbsp;class="param">-Null</span></span></div><div class="line" data-copy="code ."><span class="line-no">5</span><span class="line-text"><span&nbsp;class="function">code</span>&nbsp;.</span></div>
+</div>
+</div>
+</section>
+</section>
+    <div class="callout spaced-block"><strong>Rappel :</strong> la commande <strong>code .</strong> ouvre le dossier courant dans VS Code. Si cette commande n’est pas disponible sur votre poste, ouvrez simplement ce dossier manuellement dans VS Code.</div>
+    <section class="subsection-block">
+      <h4 class="subsection-title">Alternative si vous utilisez Linux / WSL</h4>
+      <div class="subsection-body">
+        <p>Ce bloc propose une ouverture équivalente depuis un terminal Linux. Il ne remplace pas le contenu Python du labo ; il sert seulement à préparer le dossier de travail.</p>
+        
+<section class="snippet-embed">
+<section class="code-window theme-linux">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">setup_boucle_while.sh</div>
+<button class="copy-btn" data-copy-mode="plain" data-copy-target="code-setup-boucle-while-sh" type="button">Copier</button>
+</div>
+<div class="code-body">
+<div class="terminal-intro">$ ~/Labo_Boucle_While</div>
+<div class="code-content" id="code-setup-boucle-while-sh">
+<div class="line" data-copy="mkdir -p ~/Labo_Boucle_While"><span class="line-no">1</span><span class="line-text"><span&nbsp;class="function">mkdir</span><span&nbsp;class="param">&nbsp;-p</span>&nbsp;<span&nbsp;class="string">~/Labo_Boucle_While</span></span></div><div class="line" data-copy="cd ~/Labo_Boucle_While"><span class="line-no">2</span><span class="line-text"><span&nbsp;class="function">cd</span>&nbsp;<span&nbsp;class="string">~/Labo_Boucle_While</span></span></div><div class="line" data-copy="touch while_labo.py"><span class="line-no">3</span><span class="line-text"><span&nbsp;class="function">touch</span>&nbsp;while_labo.py</span></div><div class="line" data-copy="python3 while_labo.py"><span class="line-no">4</span><span class="line-text"><span&nbsp;class="function">python3</span>&nbsp;while_labo.py</span></div>
+</div>
+</div>
+</section>
+</section>
+      </div>
+    </section>
+    <div class="callout spaced-block">
+      <strong>À saisir :</strong> expliquez en deux ou trois lignes pourquoi il est utile de conserver tous les fichiers du labo dans un dossier séparé.
+      
+<div class="answer-area">
+  <label class="prompt-label" for="p1-answer">Votre explication :</label>
+  <textarea class="team-input answerbox-medium" id="p1-answer" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+    
+<section class="part" id="partie-2">
+  <div class="part-header"><h2 class="part-title">Partie 2 — Rappel théorique essentiel</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p2-s1">Comprendre le rôle d’une boucle while</h3>
+  <div class="section-body">
+    <p>Une boucle <strong>while</strong> répète un ensemble d’instructions <strong>tant qu’une condition est vraie</strong>. Elle est particulièrement utile quand on ne connaît pas à l’avance le nombre exact de répétitions, quand on attend une saisie valide, quand on veut créer un menu répétitif, ou quand on veut répéter jusqu’à ce qu’une situation change.</p>
+    <div class="syntax-stack">
+      <div class="syntax-card">
+        <h4>Structure générale en algorithmique</h4>
+        <pre>Début
+initialisation
+Tant que condition faire
+    instructions
+    mise à jour
+Fin Tant que
+Fin</pre>
+      </div>
+      <div class="syntax-card">
+        <h4>Structure générale en Python</h4>
+        <pre>initialisation
+while condition:
+    instructions
+    mise_a_jour</pre>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Élément indispensable</th>
+            <th>Pourquoi il est important</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Initialisation</td><td>Elle donne la première valeur à la variable qui contrôlera la boucle.</td></tr>
+          <tr><td>Condition</td><td>Elle décide si la boucle continue ou s’arrête.</td></tr>
+          <tr><td>Mise à jour</td><td>Elle fait évoluer la variable de contrôle pour éviter une répétition infinie.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="inline-note"><strong>Astuce-clé :</strong> avant d’écrire une boucle, posez-vous toujours cette question : <em>qu’est-ce qui fait arrêter la boucle ?</em> Si la réponse n’est pas claire, la boucle risque d’être incorrecte.</div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p2-s2">Repérer l’erreur classique</h3>
+  <div class="section-body">
+    <p>La source rappelle que la plus grande erreur consiste à oublier la mise à jour. Dans ce cas, la condition peut rester vraie pour toujours et créer une boucle infinie.</p>
+    
+<section class="snippet-embed">
+<section class="code-window theme-python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">boucle_dangereuse.py</div>
+<button class="copy-btn" data-copy-mode="plain" data-copy-target="code-boucle-dangereuse-py" type="button">Copier</button>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — exemple à analyser, pas à exécuter tel quel</div>
+<div class="code-content" id="code-boucle-dangereuse-py">
+<div class="line" data-copy="x = 1"><span class="line-no">1</span><span class="line-text"><span class="py-default">x</span>&nbsp;<span class="py-operator">=</span>&nbsp;<span class="py-number">1</span></span></div><div class="line" data-copy="while x &lt;= 5:"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">while</span>&nbsp;<span class="py-default">x</span>&nbsp;<span class="py-operator">&lt;=</span>&nbsp;<span class="py-number">5</span><span class="py-operator">:</span></span></div><div class="line" data-copy="    print(x)"><span class="line-no">3</span><span class="line-text">    <span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-default">x</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section>
+</section>
+    <div class="callout spaced-block"><strong>Point de vigilance :</strong> ici, <code>x</code> ne change jamais. La condition <code>x &lt;= 5</code> reste donc vraie indéfiniment.</div>
+    <ul class="hint-list">
+      <li>Repérez toujours la variable qui contrôle la boucle : <code>i</code>, <code>compteur</code>, <code>choix</code>, <code>reponse</code>, <code>note</code>, etc.</li>
+      <li>Vérifiez si la condition doit être stricte (<code>&lt;</code>, <code>&gt;</code>) ou large (<code>&lt;=</code>, <code>&gt;=</code>).</li>
+      <li>Testez mentalement les premières valeurs avant d’exécuter le programme.</li>
+      <li>Quand vous bloquez, reprenez la méthode : initialisation → condition → action → mise à jour → sortie.</li>
+    </ul>
+  </div>
+</section>
+
+  </div>
+</section>
+    
+<section class="part" id="partie-3">
+  <div class="part-header"><h2 class="part-title">Partie 3 — Vérification des notions de base</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p3-s1">Exercice 1 — Réponses courtes</h3>
+  <div class="section-body">
+    <p>Répondez brièvement aux questions suivantes pour vérifier vos bases.</p>
+    <div class="exercise-grid">
+      <div class="exercise-card"><h4>Question 1</h4><p>Une boucle while répète des instructions jusqu’à quand ?</p>
+<div class="answer-area">
+  <label class="prompt-label" for="p3-q1">Réponse :</label>
+  <textarea class="team-input answerbox-short" id="p3-q1" placeholder="Écris ici ta réponse..."></textarea>
+</div></div>
+      <div class="exercise-card"><h4>Question 2</h4><p>Quel élément permet de décider si la boucle continue ou s’arrête ?</p>
+<div class="answer-area">
+  <label class="prompt-label" for="p3-q2">Réponse :</label>
+  <textarea class="team-input answerbox-short" id="p3-q2" placeholder="Écris ici ta réponse..."></textarea>
+</div></div>
+      <div class="exercise-card"><h4>Question 3</h4><p>Nommez les trois éléments importants d’une boucle while.</p>
+<div class="answer-area">
+  <label class="prompt-label" for="p3-q3">Réponse :</label>
+  <textarea class="team-input answerbox-short" id="p3-q3" placeholder="Écris ici ta réponse..."></textarea>
+</div></div>
+      <div class="exercise-card"><h4>Question 4</h4><p>Quelle erreur provoque souvent une boucle infinie ?</p>
+<div class="answer-area">
+  <label class="prompt-label" for="p3-q4">Réponse :</label>
+  <textarea class="team-input answerbox-short" id="p3-q4" placeholder="Écris ici ta réponse..."></textarea>
+</div></div>
+      <div class="exercise-card"><h4>Question 5</h4><p>Donnez un exemple de situation où while est plus adaptée que for.</p>
+<div class="answer-area">
+  <label class="prompt-label" for="p3-q5">Réponse :</label>
+  <textarea class="team-input answerbox-short" id="p3-q5" placeholder="Écris ici ta réponse..."></textarea>
+</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p3-s2">Exercice 2 — Cases à cocher</h3>
+  <div class="section-body">
+    <p>Cochez les affirmations correctes. Ces cases servent à l’auto-vérification du contenu ; elles sont indépendantes de la checklist automatique des captures.</p>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <h4>a. Une boucle while</h4>
+        <ul class="checkbox-list">
+          <li><label><input type="checkbox"/><span>répète toujours exactement 10 fois</span></label></li>
+          <li><label><input type="checkbox"/><span>dépend d’une condition</span></label></li>
+          <li><label><input type="checkbox"/><span>peut devenir infinie si elle est mal écrite</span></label></li>
+          <li><label><input type="checkbox"/><span>n’a jamais besoin de variable de contrôle</span></label></li>
+        </ul>
+      </div>
+      <div class="exercise-card">
+        <h4>b. Dans une boucle while correcte, on retrouve souvent</h4>
+        <ul class="checkbox-list">
+          <li><label><input type="checkbox"/><span>une initialisation</span></label></li>
+          <li><label><input type="checkbox"/><span>une mise à jour</span></label></li>
+          <li><label><input type="checkbox"/><span>une image</span></label></li>
+          <li><label><input type="checkbox"/><span>une condition</span></label></li>
+        </ul>
+      </div>
+      <div class="exercise-card">
+        <h4>c. La boucle while est particulièrement utile quand</h4>
+        <ul class="checkbox-list">
+          <li><label><input type="checkbox"/><span>on ne connaît pas toujours le nombre exact de répétitions</span></label></li>
+          <li><label><input type="checkbox"/><span>on veut répéter jusqu’à une saisie valide</span></label></li>
+          <li><label><input type="checkbox"/><span>on veut faire un menu</span></label></li>
+          <li><label><input type="checkbox"/><span>on veut éviter toute condition</span></label></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+    
+<section class="part" id="partie-4">
+  <div class="part-header"><h2 class="part-title">Partie 4 — Lecture et compréhension</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p4-s1">Exercice 3 — Analyse d’algorithmes</h3>
+  <div class="section-body">
+    <p>Observez chaque algorithme puis répondez aux questions. Repérez bien la valeur initiale, la condition et la mise à jour.</p>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <h4>Algorithme A</h4>
+        <div class="syntax-card">
+          <pre>Début
+i ← 1
+Tant que i &lt;= 4 faire
+    Afficher i
+    i ← i + 1
+Fin Tant que
+Fin</pre>
+        </div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-a1">Quelle est la valeur initiale de i ?</label>
+  <textarea class="team-input answerbox-short" id="p4-a1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-a2">Quelle est la condition de la boucle ?</label>
+  <textarea class="team-input answerbox-short" id="p4-a2" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-a3">Quelle instruction met à jour i ?</label>
+  <textarea class="team-input answerbox-short" id="p4-a3" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-a4">Quelles valeurs seront affichées ?</label>
+  <textarea class="team-input answerbox-short" id="p4-a4" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-a5">Combien de fois la boucle s’exécute-t-elle ?</label>
+  <textarea class="team-input answerbox-short" id="p4-a5" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Algorithme B</h4>
+        <div class="syntax-card">
+          <pre>Début
+n ← 5
+Tant que n &gt; 0 faire
+    Afficher n
+    n ← n - 2
+Fin Tant que
+Fin</pre>
+        </div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-b1">Quelles valeurs seront affichées ?</label>
+  <textarea class="team-input answerbox-short" id="p4-b1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-b2">La boucle s’arrête-t-elle ? Pourquoi ?</label>
+  <textarea class="team-input answerbox-short" id="p4-b2" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-b3">Après le dernier tour, quelle est la valeur de n ?</label>
+  <textarea class="team-input answerbox-short" id="p4-b3" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p4-s2">Exercice 4 — Vrai ou faux avec justification</h3>
+  <div class="section-body">
+    <p>Indiquez si chaque affirmation est vraie ou fausse, puis justifiez en une phrase.</p>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <h4>Affirmation 1</h4>
+        <p>Une boucle while peut fonctionner sans condition.</p>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-vf1">Réponse et justification :</label>
+  <textarea class="team-input answerbox-medium" id="p4-vf1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Affirmation 2</h4>
+        <p>Si la variable de contrôle ne change pas, la boucle peut devenir infinie.</p>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-vf2">Réponse et justification :</label>
+  <textarea class="team-input answerbox-medium" id="p4-vf2" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Affirmation 3</h4>
+        <p>Une boucle while vérifie la condition avant d’entrer dans le bloc.</p>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-vf3">Réponse et justification :</label>
+  <textarea class="team-input answerbox-medium" id="p4-vf3" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Affirmation 4</h4>
+        <p>Une boucle while s’exécute toujours au moins une fois.</p>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p4-vf4">Réponse et justification :</label>
+  <textarea class="team-input answerbox-medium" id="p4-vf4" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+    
+<section class="part" id="partie-5">
+  <div class="part-header"><h2 class="part-title">Partie 5 — Compléter une logique existante</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p5-s1">Exercice 5 — Compléter les éléments manquants</h3>
+  <div class="section-body">
+    <p>Complétez les pointillés pour que la logique fonctionne correctement.</p>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <h4>a. Algorithmique</h4>
+        <div class="syntax-card"><pre>Début
+x ← 1
+Tant que x _____ 5 faire
+    Afficher x
+    x ← x + 1
+Fin Tant que
+Fin</pre></div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p5-a1">Quel opérateur faut-il mettre pour afficher 1 à 5 ?</label>
+  <textarea class="team-input answerbox-short" id="p5-a1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>b. Python</h4>
+        <div class="syntax-card"><pre>n = 3
+while n _____ 0:
+    print(n)
+    n = n - 1</pre></div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p5-b1">Quel opérateur faut-il mettre pour afficher 3, 2, 1 ?</label>
+  <textarea class="team-input answerbox-short" id="p5-b1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>c. Algorithmique</h4>
+        <div class="syntax-card"><pre>Début
+total ← 0
+compteur ← 1
+Tant que compteur &lt;= 4 faire
+    total ← total + compteur
+    compteur ← __________
+Fin Tant que
+Afficher total
+Fin</pre></div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p5-c1">Quelle instruction faut-il écrire pour que la boucle avance correctement ?</label>
+  <textarea class="team-input answerbox-short" id="p5-c1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p5-s2">Exercice 6 — Repérer l’erreur</h3>
+  <div class="section-body">
+    <p>Pour chaque cas, indiquez l’erreur logique principale.</p>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <h4>Cas 1</h4>
+        <div class="syntax-card"><pre>x = 1
+while x &lt;= 3:
+    print(x)</pre></div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p5-err1">Erreur repérée :</label>
+  <textarea class="team-input answerbox-short" id="p5-err1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Cas 2</h4>
+        <div class="syntax-card"><pre>x = 10
+while x &lt; 5:
+    print(x)
+    x = x + 1</pre></div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p5-err2">Erreur repérée :</label>
+  <textarea class="team-input answerbox-short" id="p5-err2" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Cas 3</h4>
+        <div class="syntax-card"><pre>Début
+i ← 0
+Tant que i &lt; 5 faire
+    Afficher i
+    i ← i - 1
+Fin Tant que
+Fin</pre></div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p5-err3">Erreur repérée :</label>
+  <textarea class="team-input answerbox-short" id="p5-err3" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+    
+<section class="part" id="partie-6">
+  <div class="part-header"><h2 class="part-title">Partie 6 — Tracer l’exécution</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p6-s1">Exercice 7 — Tableau de trace</h3>
+  <div class="section-body">
+    <p>Complétez mentalement ou par exécution le tableau de trace suivant.</p>
+    
+<section class="snippet-embed">
+<section class="code-window theme-python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">trace_boucle.py</div>
+<button class="copy-btn" data-copy-mode="plain" data-copy-target="code-trace-boucle-py" type="button">Copier</button>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — à analyser ou exécuter</div>
+<div class="code-content" id="code-trace-boucle-py">
+<div class="line" data-copy="i = 2"><span class="line-no">1</span><span class="line-text"><span class="py-default">i</span>&nbsp;<span class="py-operator">=</span>&nbsp;<span class="py-number">2</span></span></div><div class="line" data-copy="while i &lt;= 8:"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">while</span>&nbsp;<span class="py-default">i</span>&nbsp;<span class="py-operator">&lt;=</span>&nbsp;<span class="py-number">8</span><span class="py-operator">:</span></span></div><div class="line" data-copy="    print(i)"><span class="line-no">3</span><span class="line-text">    <span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-default">i</span><span class="py-operator">)</span></span></div><div class="line" data-copy="    i = i + 2"><span class="line-no">4</span><span class="line-text">    <span class="py-default">i</span>&nbsp;<span class="py-operator">=</span>&nbsp;<span class="py-default">i</span>&nbsp;<span class="py-operator">+</span>&nbsp;<span class="py-number">2</span></span></div>
+</div>
+</div>
+</section>
+</section>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Élément à compléter</th><th>Votre réponse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Valeur initiale de i</td><td><textarea class="team-input answerbox-short" id="p6-trace1" placeholder="Écris ici ta réponse..."></textarea></td></tr>
+          <tr><td>Valeur affichée au 1er tour</td><td><textarea class="team-input answerbox-short" id="p6-trace2" placeholder="Écris ici ta réponse..."></textarea></td></tr>
+          <tr><td>Valeur affichée au 2e tour</td><td><textarea class="team-input answerbox-short" id="p6-trace3" placeholder="Écris ici ta réponse..."></textarea></td></tr>
+          <tr><td>Valeur affichée au 3e tour</td><td><textarea class="team-input answerbox-short" id="p6-trace4" placeholder="Écris ici ta réponse..."></textarea></td></tr>
+          <tr><td>Valeur de i après le dernier tour</td><td><textarea class="team-input answerbox-short" id="p6-trace5" placeholder="Écris ici ta réponse..."></textarea></td></tr>
+          <tr><td>La boucle s’arrête quand</td><td><textarea class="team-input answerbox-short" id="p6-trace6" placeholder="Écris ici ta réponse..."></textarea></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p6-s2">Exercice 8 — Prédire la sortie</h3>
+  <div class="section-body">
+    <p>Écrivez exactement ce qui sera affiché pour chacun des programmes suivants.</p>
+    <div class="dual-col">
+      <div>
+        
+<section class="snippet-embed">
+<section class="code-window theme-python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">sortie_bonjour.py</div>
+<button class="copy-btn" data-copy-mode="plain" data-copy-target="code-sortie-bonjour-py" type="button">Copier</button>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — prédire la sortie</div>
+<div class="code-content" id="code-sortie-bonjour-py">
+<div class="line" data-copy="i = 1"><span class="line-no">1</span><span class="line-text"><span class="py-default">i</span>&nbsp;<span class="py-operator">=</span>&nbsp;<span class="py-number">1</span></span></div><div class="line" data-copy="while i &lt;= 3:"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">while</span>&nbsp;<span class="py-default">i</span>&nbsp;<span class="py-operator">&lt;=</span>&nbsp;<span class="py-number">3</span><span class="py-operator">:</span></span></div><div class="line" data-copy="    print(&quot;bonjour&quot;)"><span class="line-no">3</span><span class="line-text">    <span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">&quot;bonjour&quot;</span><span class="py-operator">)</span></span></div><div class="line" data-copy="    i += 1"><span class="line-no">4</span><span class="line-text">    <span class="py-default">i</span>&nbsp;<span class="py-operator">+=</span>&nbsp;<span class="py-number">1</span></span></div>
+</div>
+</div>
+</section>
+</section>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p6-sortie1">Sortie attendue :</label>
+  <textarea class="team-input answerbox-medium answerbox-code" id="p6-sortie1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div>
+        
+<section class="snippet-embed">
+<section class="code-window theme-python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">sortie_decompte.py</div>
+<button class="copy-btn" data-copy-mode="plain" data-copy-target="code-sortie-decompte-py" type="button">Copier</button>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — prédire la sortie</div>
+<div class="code-content" id="code-sortie-decompte-py">
+<div class="line" data-copy="x = 4"><span class="line-no">1</span><span class="line-text"><span class="py-default">x</span>&nbsp;<span class="py-operator">=</span>&nbsp;<span class="py-number">4</span></span></div><div class="line" data-copy="while x &gt;= 1:"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">while</span>&nbsp;<span class="py-default">x</span>&nbsp;<span class="py-operator">&gt;=</span>&nbsp;<span class="py-number">1</span><span class="py-operator">:</span></span></div><div class="line" data-copy="    print(x)"><span class="line-no">3</span><span class="line-text">    <span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-default">x</span><span class="py-operator">)</span></span></div><div class="line" data-copy="    x -= 1"><span class="line-no">4</span><span class="line-text">    <span class="py-default">x</span>&nbsp;<span class="py-operator">-=</span>&nbsp;<span class="py-number">1</span></span></div>
+</div>
+</div>
+</section>
+</section>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p6-sortie2">Sortie attendue :</label>
+  <textarea class="team-input answerbox-medium answerbox-code" id="p6-sortie2" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+    
+<section class="part" id="partie-7">
+  <div class="part-header"><h2 class="part-title">Partie 7 — Passage de l’idée à l’algorithme</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p7-s1">Exercice 9 — Écrire un algorithme simple</h3>
+  <div class="section-body">
+    <p>Rédigez les algorithmes demandés en respectant la logique <strong>initialisation → condition → actions → mise à jour</strong>.</p>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <h4>Consigne A</h4>
+        <p>Écrire un algorithme qui affiche les nombres de 1 à 5 avec une boucle while.</p>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p7-algo1">Votre algorithme :</label>
+  <textarea class="team-input answerbox-code" id="p7-algo1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Consigne B</h4>
+        <p>Écrire un algorithme qui affiche les nombres de 10 à 6.</p>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p7-algo2">Votre algorithme :</label>
+  <textarea class="team-input answerbox-code" id="p7-algo2" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Consigne C</h4>
+        <p>Écrire un algorithme qui affiche uniquement les nombres pairs de 2 à 10.</p>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p7-algo3">Votre algorithme :</label>
+  <textarea class="team-input answerbox-code" id="p7-algo3" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p7-s2">Exercice 10 — Algorithme avec compteur et total</h3>
+  <div class="section-body">
+    <p>Écrivez un algorithme qui calcule la somme des nombres de 1 à 4 puis affiche le résultat.</p>
+    <div class="callout spaced-block">
+      <strong>Conseil :</strong> utilisez une variable <code>total</code> et une variable de contrôle, puis mettez le total à jour à chaque tour.
+      
+<div class="answer-area">
+  <label class="prompt-label" for="p7-total">Votre algorithme complet :</label>
+  <textarea class="team-input answerbox-code" id="p7-total" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+    
+<section class="part" id="partie-8">
+  <div class="part-header"><h2 class="part-title">Partie 8 — Passage de l’algorithme au Python</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p8-s1">Exercice 11 — Traduction vers Python</h3>
+  <div class="section-body">
+    <p>Transformez chaque demande en programme Python complet, exécutable dans VS Code.</p>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <h4>a. Afficher de 1 à 5</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p8-py1">Votre programme Python :</label>
+  <textarea class="team-input answerbox-code" id="p8-py1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>b. Afficher 5, 4, 3, 2, 1</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p8-py2">Votre programme Python :</label>
+  <textarea class="team-input answerbox-code" id="p8-py2" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>c. Afficher les nombres pairs de 0 à 10</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p8-py3">Votre programme Python :</label>
+  <textarea class="team-input answerbox-code" id="p8-py3" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+    
+<div class="proof callout spaced-block" data-proof-id="capture-traduction">
+  <div class="proof-head">
+    <div><strong>Capture obligatoire :</strong> après avoir exécuté un des programmes de cet exercice, montrez le code écrit, l’exécution du programme et le résultat affiché.</div>
+  </div>
+  <div class="proof-body" tabindex="0" title="Cliquez ici puis collez une image depuis le presse-papiers avec Ctrl+V">
+    <div class="proofEmpty"><button class="btnCapture proofInsertLink" type="button">Insérer</button> ici la capture demandée.<div class="proofPasteHint">ou collez une image enregistrée dans le presse-papiers avec Ctrl+V.</div></div>
+    <img alt="Capture de l’étudiant" class="proofImg"/>
+    <input accept="image/*" class="proofFile" hidden="" type="file"/>
+    <div class="proofBodyActions"><button class="btnClear proofRemoveLink" type="button">retirer la capture</button></div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p8-s2">Exercice 12 — Programme avec validation simple</h3>
+  <div class="section-body">
+    <p>Écrivez un programme Python qui demande à l’utilisateur d’entrer un nombre positif. Tant que l’utilisateur entre un nombre négatif, le programme redemande la valeur. Quand la valeur est correcte, le programme affiche <strong>valeur acceptée</strong>.</p>
+    <div class="callout spaced-block">
+      <strong>Aide méthodologique :</strong>
+      <ol class="tight-list">
+        <li>Quelle variable va contenir la réponse de l’utilisateur ?</li>
+        <li>Quelle est la condition pour continuer la boucle ?</li>
+        <li>Quand la boucle doit-elle s’arrêter ?</li>
+        <li>Que faut-il afficher à la fin ?</li>
+      </ol>
+      <div class="question-stack">
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p8-help1">1. Votre réponse :</label>
+  <textarea class="team-input answerbox-short" id="p8-help1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p8-help2">2. Votre réponse :</label>
+  <textarea class="team-input answerbox-short" id="p8-help2" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p8-help3">3. Votre réponse :</label>
+  <textarea class="team-input answerbox-short" id="p8-help3" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p8-help4">4. Votre réponse :</label>
+  <textarea class="team-input answerbox-short" id="p8-help4" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+    <div class="exercise-card">
+      <h4>Votre programme Python</h4>
+      
+<div class="answer-area">
+  <label class="prompt-label" for="p8-validation">Code final :</label>
+  <textarea class="team-input answerbox-code" id="p8-validation" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+    
+<section class="part" id="partie-9">
+  <div class="part-header"><h2 class="part-title">Partie 9 — Exercices progressifs de programmation</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p9-s1">Exercice 13 — Niveau guidé</h3>
+  <div class="section-body">
+    <p>Écrivez un programme Python qui commence avec <code>compteur = 1</code>, affiche <strong>tour 1</strong>, <strong>tour 2</strong>, <strong>tour 3</strong>, <strong>tour 4</strong> puis s’arrête après le 4e tour.</p>
+    <div class="exercise-card">
+      
+<div class="answer-area">
+  <label class="prompt-label" for="p9-guided">Votre programme Python :</label>
+  <textarea class="team-input answerbox-code" id="p9-guided" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p9-s2">Exercice 14 — Niveau intermédiaire</h3>
+  <div class="section-body">
+    <p>Écrivez un programme Python qui demande un mot de passe à l’utilisateur. Tant que le mot de passe entré est différent de <code>python123</code>, le programme affiche <strong>mot de passe incorrect</strong> et redemande la saisie. Quand le bon mot de passe est saisi, le programme affiche <strong>accès autorisé</strong>.</p>
+    <div class="callout spaced-block"><strong>Astuce :</strong> ici, le nombre de répétitions n’est pas connu à l’avance. C’est donc un très bon cas d’utilisation de <strong>while</strong>.</div>
+    <div class="exercise-card">
+      
+<div class="answer-area">
+  <label class="prompt-label" for="p9-password">Votre programme Python :</label>
+  <textarea class="team-input answerbox-code" id="p9-password" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+    </div>
+    
+<div class="proof callout spaced-block" data-proof-id="capture-motdepasse">
+  <div class="proof-head">
+    <div><strong>Capture obligatoire :</strong> après avoir testé le programme de mot de passe, montrez au moins une saisie incorrecte, le message <strong>mot de passe incorrect</strong>, puis une saisie correcte et le message <strong>accès autorisé</strong>.</div>
+  </div>
+  <div class="proof-body" tabindex="0" title="Cliquez ici puis collez une image depuis le presse-papiers avec Ctrl+V">
+    <div class="proofEmpty"><button class="btnCapture proofInsertLink" type="button">Insérer</button> ici la capture demandée.<div class="proofPasteHint">ou collez une image enregistrée dans le presse-papiers avec Ctrl+V.</div></div>
+    <img alt="Capture de l’étudiant" class="proofImg"/>
+    <input accept="image/*" class="proofFile" hidden="" type="file"/>
+    <div class="proofBodyActions"><button class="btnClear proofRemoveLink" type="button">retirer la capture</button></div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p9-s3">Exercice 15 — Niveau plus avancé</h3>
+  <div class="section-body">
+    <p>Écrivez un programme Python qui demande un nombre à l’utilisateur puis affiche sa table de multiplication de 1 à 5.</p>
+    <div class="exercise-card">
+      
+<div class="answer-area">
+  <label class="prompt-label" for="p9-table">Votre programme Python :</label>
+  <textarea class="team-input answerbox-code" id="p9-table" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p9-s4">Exercice 16 — Défi logique</h3>
+  <div class="section-body">
+    <p>Écrivez d’abord l’algorithme puis sa version Python pour afficher le compte à rebours de 5 à 0, puis afficher <strong>décollage</strong>.</p>
+    <div class="dual-col">
+      <div class="exercise-card">
+        <h4>Algorithme</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p9-defi-algo">Votre algorithme :</label>
+  <textarea class="team-input answerbox-code" id="p9-defi-algo" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Python</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p9-defi-py">Votre programme Python :</label>
+  <textarea class="team-input answerbox-code" id="p9-defi-py" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+    
+<section class="part" id="partie-10">
+  <div class="part-header"><h2 class="part-title">Partie 10 — Débogage pédagogique</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p10-s1">Exercice 17 — Corriger un programme</h3>
+  <div class="section-body">
+    <p>Le programme suivant contient des erreurs logiques. Réécrivez-le correctement pour qu’il affiche les nombres de 1 à 5 puis le message <strong>fin</strong>.</p>
+    
+<section class="snippet-embed">
+<section class="code-window theme-python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">programme_a_corriger.py</div>
+<button class="copy-btn" data-copy-mode="plain" data-copy-target="code-programme-a-corriger-py" type="button">Copier</button>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — repérer les erreurs logiques</div>
+<div class="code-content" id="code-programme-a-corriger-py">
+<div class="line" data-copy="n = 1"><span class="line-no">1</span><span class="line-text"><span class="py-default">n</span>&nbsp;<span class="py-operator">=</span>&nbsp;<span class="py-number">1</span></span></div><div class="line" data-copy="while n &gt;= 5:"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">while</span>&nbsp;<span class="py-default">n</span>&nbsp;<span class="py-operator">&gt;=</span>&nbsp;<span class="py-number">5</span><span class="py-operator">:</span></span></div><div class="line" data-copy="    print(n)"><span class="line-no">3</span><span class="line-text">    <span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-default">n</span><span class="py-operator">)</span></span></div><div class="line" data-copy="    n = n + 1"><span class="line-no">4</span><span class="line-text">    <span class="py-default">n</span>&nbsp;<span class="py-operator">=</span>&nbsp;<span class="py-default">n</span>&nbsp;<span class="py-operator">+</span>&nbsp;<span class="py-number">1</span></span></div><div class="line" data-copy="print(&quot;fin&quot;)"><span class="line-no">5</span><span class="line-text"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">&quot;fin&quot;</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section>
+</section>
+    <div class="exercise-card">
+      <h4>Version corrigée</h4>
+      
+<div class="answer-area">
+  <label class="prompt-label" for="p10-corrected">Votre programme corrigé :</label>
+  <textarea class="team-input answerbox-code" id="p10-corrected" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+    </div>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <h4>Explication de l’erreur 1</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p10-exp1">Votre explication :</label>
+  <textarea class="team-input answerbox-short" id="p10-exp1" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Explication de l’erreur 2</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p10-exp2">Votre explication :</label>
+  <textarea class="team-input answerbox-short" id="p10-exp2" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>Explication de l’erreur 3</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p10-exp3">Votre explication :</label>
+  <textarea class="team-input answerbox-short" id="p10-exp3" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+    
+<section class="part" id="partie-11">
+  <div class="part-header"><h2 class="part-title">Partie 11 — Synthèse et bilan final</h2></div>
+  <div class="part-body">
+    
+<section class="section-block line-section">
+  <h3 class="section-title" id="p11-s1">Exercice 18 — Mini situation-problème</h3>
+  <div class="section-body">
+    <p>Un enseignant veut créer un petit programme qui continue à poser la question <strong>« Veux-tu continuer ? (oui/non) »</strong>. Le programme doit répéter la question tant que la réponse est différente de <strong>non</strong>. Quand l’utilisateur tape <strong>non</strong>, le programme affiche <strong>fin du programme</strong>.</p>
+    <div class="exercise-grid">
+      <div class="exercise-card">
+        <h4>1. Idée générale</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p11-idee">Expliquez l’idée générale en une ou deux phrases :</label>
+  <textarea class="team-input answerbox-medium" id="p11-idee" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>2. Algorithme</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p11-algo">Votre algorithme :</label>
+  <textarea class="team-input answerbox-code" id="p11-algo" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+      <div class="exercise-card">
+        <h4>3. Python</h4>
+        
+<div class="answer-area">
+  <label class="prompt-label" for="p11-python">Votre programme Python :</label>
+  <textarea class="team-input answerbox-code" id="p11-python" placeholder="Écris ici ta réponse..."></textarea>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-block line-section">
+  <h3 class="section-title" id="p11-s2">Bilan final</h3>
+  <div class="section-body">
+    <div class="exercise-card">
+      <h4>Autoévaluation</h4>
+      <p>Cochez ce que vous vous sentez capable de faire seul après ce labo.</p>
+      <ul class="self-check-list">
+        <li><label><input type="checkbox"/><span>Je peux reconnaître une boucle while.</span></label></li>
+        <li><label><input type="checkbox"/><span>Je peux expliquer son fonctionnement.</span></label></li>
+        <li><label><input type="checkbox"/><span>Je peux repérer une boucle infinie.</span></label></li>
+        <li><label><input type="checkbox"/><span>Je peux compléter une boucle incomplète.</span></label></li>
+        <li><label><input type="checkbox"/><span>Je peux écrire un algorithme avec while.</span></label></li>
+        <li><label><input type="checkbox"/><span>Je peux écrire un programme Python avec while.</span></label></li>
+        <li><label><input type="checkbox"/><span>Je peux utiliser while pour valider une saisie.</span></label></li>
+      </ul>
+    </div>
+    <div class="table-wrap spaced-block">
+      <table class="capture-checklist-table">
+        <thead>
+          <tr>
+            <th>Étape</th>
+            <th>Preuve attendue</th>
+            <th class="check-cell">Capture insérée</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Traduction vers Python</td>
+            <td>Code, exécution et résultat d’un programme de l’exercice 11</td>
+            <td class="check-cell"><input class="capture-check" data-proof-target="capture-traduction" tabindex="-1" type="checkbox"/></td>
+          </tr>
+          <tr>
+            <td>Programme de mot de passe</td>
+            <td>Au moins une saisie incorrecte puis une saisie correcte avec les messages attendus</td>
+            <td class="check-cell"><input class="capture-check" data-proof-target="capture-motdepasse" tabindex="-1" type="checkbox"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout spaced-block"><strong>Vérification automatique :</strong> les cases du tableau ci-dessus se cochent toutes seules quand la capture correspondante est réellement insérée dans le document. Si vous retirez une capture, la case se décochera automatiquement.</div>
+  </div>
+</section>
+
+  </div>
+</section>
+
+    
+<section class="part" id="partie-qcm">
+  <div class="part-header"><h2 class="part-title">QCM de validation</h2></div>
+  <div class="part-body">
+    <div class="callout spaced-block qcm-intro">
+      <strong>Consigne :</strong> choisissez la bonne réponse pour chaque question. Ce QCM reprend uniquement des notions réellement travaillées dans ce labo sur la boucle <strong>while</strong>.
+    </div>
+    
+<section class="section-block qcm-block" data-correct="B">
+  <h3 class="section-title"><span class="qcm-badge">Question 1</span></h3>
+  <div class="section-body">
+    <p class="qcm-question">Quel est le rôle principal d’une boucle while ?</p>
+    <div class="qcm-options">
+      <label class="qcm-option"><input name="qcm_q1" type="radio" value="A"/><span class="qcm-option-text">Décorer le programme.</span></label><label class="qcm-option"><input name="qcm_q1" type="radio" value="B"/><span class="qcm-option-text">Répéter des instructions tant qu’une condition est vraie.</span></label><label class="qcm-option"><input name="qcm_q1" type="radio" value="C"/><span class="qcm-option-text">Afficher automatiquement un tableau.</span></label><label class="qcm-option"><input name="qcm_q1" type="radio" value="D"/><span class="qcm-option-text">Remplacer toutes les variables.</span></label>
+    </div>
+  </div>
+</section>
+<section class="section-block qcm-block" data-correct="C">
+  <h3 class="section-title"><span class="qcm-badge">Question 2</span></h3>
+  <div class="section-body">
+    <p class="qcm-question">Quel élément est souvent oublié et provoque une boucle infinie ?</p>
+    <div class="qcm-options">
+      <label class="qcm-option"><input name="qcm_q2" type="radio" value="A"/><span class="qcm-option-text">L’affichage.</span></label><label class="qcm-option"><input name="qcm_q2" type="radio" value="B"/><span class="qcm-option-text">Le commentaire.</span></label><label class="qcm-option"><input name="qcm_q2" type="radio" value="C"/><span class="qcm-option-text">La mise à jour de la variable de contrôle.</span></label><label class="qcm-option"><input name="qcm_q2" type="radio" value="D"/><span class="qcm-option-text">L’importation d’un module.</span></label>
+    </div>
+  </div>
+</section>
+<section class="section-block qcm-block" data-correct="B">
+  <h3 class="section-title"><span class="qcm-badge">Question 3</span></h3>
+  <div class="section-body">
+    <p class="qcm-question">Dans ce code, combien de fois la boucle s’exécute-t-elle ?<br><code>x = 1<br>while x &lt;= 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;print(x)<br>&nbsp;&nbsp;&nbsp;&nbsp;x += 1</code></p>
+    <div class="qcm-options">
+      <label class="qcm-option"><input name="qcm_q3" type="radio" value="A"/><span class="qcm-option-text">2 fois.</span></label><label class="qcm-option"><input name="qcm_q3" type="radio" value="B"/><span class="qcm-option-text">3 fois.</span></label><label class="qcm-option"><input name="qcm_q3" type="radio" value="C"/><span class="qcm-option-text">4 fois.</span></label><label class="qcm-option"><input name="qcm_q3" type="radio" value="D"/><span class="qcm-option-text">0 fois.</span></label>
+    </div>
+  </div>
+</section>
+<section class="section-block qcm-block" data-correct="B">
+  <h3 class="section-title"><span class="qcm-badge">Question 4</span></h3>
+  <div class="section-body">
+    <p class="qcm-question">Quelle situation convient le mieux à while ?</p>
+    <div class="qcm-options">
+      <label class="qcm-option"><input name="qcm_q4" type="radio" value="A"/><span class="qcm-option-text">Afficher exactement les mois de l’année sans condition variable.</span></label><label class="qcm-option"><input name="qcm_q4" type="radio" value="B"/><span class="qcm-option-text">Répéter une demande jusqu’à obtenir une réponse valide.</span></label><label class="qcm-option"><input name="qcm_q4" type="radio" value="C"/><span class="qcm-option-text">Dessiner une image fixe.</span></label><label class="qcm-option"><input name="qcm_q4" type="radio" value="D"/><span class="qcm-option-text">Déclarer une variable une seule fois.</span></label>
+    </div>
+  </div>
+</section>
+<section class="section-block qcm-block" data-correct="B">
+  <h3 class="section-title"><span class="qcm-badge">Question 5</span></h3>
+  <div class="section-body">
+    <p class="qcm-question">Dans une boucle while, la condition est généralement vérifiée :</p>
+    <div class="qcm-options">
+      <label class="qcm-option"><input name="qcm_q5" type="radio" value="A"/><span class="qcm-option-text">Après la fin du programme.</span></label><label class="qcm-option"><input name="qcm_q5" type="radio" value="B"/><span class="qcm-option-text">Avant chaque tour de boucle.</span></label><label class="qcm-option"><input name="qcm_q5" type="radio" value="C"/><span class="qcm-option-text">Une seule fois au début du cours.</span></label><label class="qcm-option"><input name="qcm_q5" type="radio" value="D"/><span class="qcm-option-text">Seulement en Python, jamais en algorithmique.</span></label>
+    </div>
+  </div>
+</section>
+  </div>
+</section>
+
+    
+<section class="card" id="export">
+  <h2>Exporter en PDF</h2>
+  <ul class="list">
+    <li>Vérifiez que toutes les captures obligatoires sont visibles dans la page.</li>
+    <li>Vérifiez que vos réponses rédigées sont complètes et lisibles.</li>
+    <li>Cliquez sur <strong>Exporter en PDF</strong>, puis choisissez <strong>Enregistrer en PDF</strong>.</li>
+    <li>Remettez ensuite le fichier PDF selon la consigne donnée.</li>
+  </ul>
+  <div aria-label="Export" class="exportbar exportbar-spaced render-export">
+    <button class="actionbtn" id="exportPdf" type="button">Exporter en PDF</button>
+  </div>
+  <div class="callout spaced-block export-callout">
+    <strong>Important :</strong> si une capture, une réponse ou une information n’apparaît pas dans la page avant l’export, elle ne sera pas dans le PDF.
+  </div>
+</section>
+
+
+    <footer class="course-footer">
+      <div class="course-footer-left">Version 2026</div>
+      <div class="course-footer-right">© <a class="footer-author-link" href="droits.html">Anis Ghaieb</a> — Support pédagogique original — Tous droits réservés</div>
+    </footer>
+  </main>
+</body>
+</html>
